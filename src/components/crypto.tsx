@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { ICryptoProps } from '../Interfaces/IProps';
 import Citation from './citation';
 import ICrypto from "../Interfaces/ICrypto";
-import {todosData} from "./todos";
 
 export let cryptoDataShare: string[] = [];
 const Crypto: React.FC<ICryptoProps> = ({handleOverlayVisibility,purpose}) => {

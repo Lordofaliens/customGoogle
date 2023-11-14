@@ -51,7 +51,7 @@ const Animation: React.FC<IAnimationProps> = () => {
 
         // Clean up on component unmount
         return () => {};
-    }, []);
+    }, );
 
     return (
         <div className="AnimationContainer">
@@ -65,7 +65,3 @@ const Animation: React.FC<IAnimationProps> = () => {
 };
 
 export default Animation;
-
-
-// TODO:
-// improve resizing of donut
