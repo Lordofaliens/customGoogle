@@ -4,7 +4,6 @@ import * as THREE from 'three';
 
 const Animation: React.FC<IAnimationProps> = () => {
     const animationRef = useRef<HTMLDivElement>(null);
-    const [isHovered, setIsHovered] = useState(false);
 
     useEffect(() => {
         // Set up scene
@@ -27,7 +26,7 @@ const Animation: React.FC<IAnimationProps> = () => {
         scene.add(torus);
 
         // Set up animation
-        const rotateSpeed = isHovered ? 0.005 : 0.02;
+        const rotateSpeed = 0.02;
 
         const animate = () => {
             requestAnimationFrame(animate);
@@ -57,8 +56,6 @@ const Animation: React.FC<IAnimationProps> = () => {
         <div className="AnimationContainer">
             <div
                 ref={animationRef}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
             />
         </div>
     );
