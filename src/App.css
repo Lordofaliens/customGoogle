@@ -1,38 +1,360 @@
+* {
+  font-family: Roboto, sans-serif;
+  font-weight: 900;
+  color: #FAF9F6;
+}
+body {
+  background-color: rgba(0,0,0,0.4);
+}
+
+.overLayer {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: black;
+  z-index: 100;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.Main {
+  height: 91vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navMainContainer {
+  background-color: rgba(0,0,0,0.4);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.navMain {
+  background-color: rgba(30,31,34,1);
+  width: 40vw;
+  margin: 1vh;
+  padding: 0.5vh;
+  height: 5vh;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 200px;
+}
+
+.navMain > a > img {
+  height: 3vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+#searchBtn > img {
+  height: 20px;
+  padding: 0.7vh;
+  width: auto;
+}
+
+.navMain > a:hover {
+  transform: scale(1.2);
+  transition: ease-in-out 0.3s;
+}
+
+.MainLeft, .MainRight {
+  width: 25vw;
+  max-height: 91vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.MainCenter {
+  width: 45vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.MainCenterTop {
+  width: 45vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tabDivContainer {
+  max-width: 50vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tabDiv {
+  min-width: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 7vw;
+  margin: 0.5vh 0.5vw;
+  padding: 0.5vh 1vw;
+  background-color: rgba(0,0,0,0.4);
+  opacity: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.tabDivAdd {
+  justify-content: center;
+}
+
+.tabDiv:hover,
+.tabDivAdd:hover,
+.overlayerSumbitBtn:hover,
+.cryptoDivAdd:hover,
+.todoDiv:hover,
+.cryptoDiv:hover,
+#searchBtn:hover {
+  transition: ease-in-out 0.3s;
+  transform: translateY(-0.5vh);
+  background-color: rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.tabDiv > * {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tabDivFirstCol {
+  display: flex;
+  align-items: center;
+}
+
+.tabDivSecondCol {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.addTabBtn {
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.addTabBtn > img{
+  height: 4vh;
+}
+
+.citation {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff8e8e; /* Adjust text color as needed */
+  animation: glow 5s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px #ff8e8e, 0 0 20px #ff8e8e, 0 0 30px #ff8e8e;
+  }
+  50% {
+    text-shadow: 0 0 20px #ff8e8e, 0 0 30px #ff8e8e, 0 0 40px #ff8e8e;
+  }
+  100% {
+    text-shadow: 0 0 10px #ff8e8e, 0 0 20px #ff8e8e, 0 0 30px #ff8e8e;
+  }
+}
+
+.searchContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchInput {
+  padding: 0.7vh 0.7vw;
+  font-size: 20px;
+  background-color: transparent;
   color: white;
+  border: 2px solid white;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+#searchBtn {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 1vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.AnimationContainer {
+  max-width: 40vw;
+  position: relative;
+}
+
+.cryptoDiv {
+  width: 20vw;
+  margin: 1vw 1vh;
+  background-color: rgba(0,0,0,0.4);
+  opacity: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cryptoNotAdd {
+  padding: 1vw 1vh;
+}
+
+.cryptoDivAdd {
+  padding: 0 1vh;
+  width: 20vw;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.addCryptoBtn {
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+.addCryptoBtn > img {
+  height: 2vw;
+  margin: 0.5vh 0.5vw;
+}
+
+.addCryptoBtn {
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.todoDiv {
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.todoActionBtns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-checkbox {
+  display: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 4px;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative; /* Add relative positioning */
+}
+
+/* Styling the label to display the custom checkbox */
+.checkbox-label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative; /* Add relative positioning */
+}
+
+/* Styling the checked state of the checkbox */
+.custom-checkbox:checked + .checkbox-label::before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 10px;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: translate(-50%, -50%) rotate(45deg) scale(-1, 1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+}
+
+.removeBtn {
+  border: none;
+  background: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.tabImage {
+  height: 4vh;
+}
+
+.overlayerRemoveBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 3vh 3vw;
+  padding: 2vh 2vw;
+  font-size: 40px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.inputContainerInner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 40px;
+}
+
+.overlayerSumbitBtn {
+  text-align: center;
+  width: 15vw;
+  min-width: 120px;
+  margin: 3vh 3vw;
+  padding: 0.5vh 1vw;
+  background-color: rgba(0,0,0,0.4);
+  opacity: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 2px white solid;
+  cursor: pointer;
 }
