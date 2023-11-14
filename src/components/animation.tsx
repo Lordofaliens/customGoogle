@@ -9,7 +9,7 @@ const Animation: React.FC<IAnimationProps> = () => {
     useEffect(() => {
         // Set up scene
         const scene = new THREE.Scene();
-        scene.background = new THREE.Color(0x1e1f22);
+        scene.background = new THREE.Color(0x1f1f1f);
 
         // Set up camera
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -51,7 +51,7 @@ const Animation: React.FC<IAnimationProps> = () => {
 
         // Clean up on component unmount
         return () => {};
-    }, );
+    },[] );
 
     return (
         <div className="AnimationContainer">
